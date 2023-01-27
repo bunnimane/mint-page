@@ -898,7 +898,7 @@
                                           const accountAddress = accounts[0];
                                           contract.methods
                                             .wl_mint(quantity_selected)
-                                            .call();
+                                            .send({ from: accountAddress });
                                         });
                                       }); 
                                     }
