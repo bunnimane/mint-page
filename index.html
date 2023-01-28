@@ -882,8 +882,8 @@
                                     }
                                     const $select = document.querySelector('#mint');
                                     $select.value = 1;
+                                    totalSupply();
                                     setInterval(function () {
-                                        var supply = totalSupply();
                                         document.querySelector('#totalSupply').innerText = `${supplyTotal}/10000`;
                                     }, 3000);
                                   </script>
