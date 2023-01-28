@@ -894,15 +894,17 @@
                                         web3.eth.getAccounts(function (err, accounts) {
                                           const accountAddress = accounts[0];
                                           
+                                          var valueInWei;
+                                          
                                           if (supplyTotal <= 4999) {
                                             const valueInEther = 0.002 * quantity_selected;
-                                            const valueInWei = web3.utils.toWei(
+                                            valueInWei = web3.utils.toWei(
                                               valueInEther.toString(),
                                               "ether"
                                             );
                                           } else {
                                             const valueInEther = 0.004 * quantity_selected;
-                                            const valueInWei = web3.utils.toWei(
+                                            valueInWei = web3.utils.toWei(
                                               valueInEther.toString(),
                                               "ether"
                                             );
