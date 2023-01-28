@@ -880,9 +880,10 @@
                                       const $select = document.querySelector('#mint')
                                       quantity_selected = parseInt($select.value);
                                     }
+                                    const $select = document.querySelector('#mint');
+                                    $select.value = 1;
                                     setInterval(function () {
-                                        const $select = document.querySelector('#mint');
-                                        $select.value = 1;
+
 
                                         var supply = totalSupply();
                                         document.querySelector('#totalSupply').innerHtml = `${Math.random()}/10000`;
