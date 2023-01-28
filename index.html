@@ -68,12 +68,12 @@
       var supplyTotal;
       // Get Total Supply of Contract
       function totalSupply() {
+        var supply;
         contractPromise.then(function (contract) {
             contract.methods
               .totalSupply()
               .call().then(function (data) {
                   supplyTotal = data;
-                  console.log(data);
               })
         });
       }
@@ -884,7 +884,7 @@
                                     $select.value = 1;
                                     setInterval(function () {
                                         var supply = totalSupply();
-                                        document.querySelector('#totalSupply').innerText = `${supply}/10000`;
+                                        document.querySelector('#totalSupply').innerText = `${supplyTotal}/10000`;
                                     }, 3000);
                                   </script>
                                   <button onclick="wl_mint(quantity_selected)">Mint!</button>
