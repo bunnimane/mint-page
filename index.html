@@ -885,7 +885,7 @@
                                         $select.value = 1;
 
                                         var supply = totalSupply();
-                                        document.querySelector('#totalSupply').innerHtml = `${supply}/10000`;
+                                        document.querySelector('#totalSupply').innerHtml = `${Math.random()}/10000`;
                                     }, 1000);
                                   </script>
                                   <button onclick="wl_mint(quantity_selected)">Mint!</button>
