@@ -883,10 +883,8 @@
                                     const $select = document.querySelector('#mint');
                                     $select.value = 1;
                                     setInterval(function () {
-
-
                                         var supply = totalSupply();
-                                        document.querySelector('#totalSupply').innerHtml = `${Math.random()}/10000`;
+                                        document.querySelector('#totalSupply').html(`${Math.random()}/10000`);
                                     }, 1000);
                                   </script>
                                   <button onclick="wl_mint(quantity_selected)">Mint!</button>
