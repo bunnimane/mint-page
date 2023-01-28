@@ -856,7 +856,7 @@
                                 </a>
                                 <div style="float:right; margin-right: 190px; margin-top:30px;">
                                   <h3 style="color:white;">Select Quantity to Mint!</h3>
-                                  <h3 id="totalSupply" style="color:white;">10/10000</h3>
+                                  <h3 id="totalSupply" style="color:white;">1000/10000</h3>
                                   <h3 style="color:white;">Whitelist Price: Free</h3>
                                   <select name="cat" id="mint" onchange="quantityChange()">
                                     <option value="#" selected="">
@@ -896,9 +896,15 @@
                                       contractPromise.then(function (contract) {
                                         web3.eth.getAccounts(function (err, accounts) {
                                           const accountAddress = accounts[0];
+
+                                          const valueInEther = 0.007 * quantity_selected;
+                                          const valueInWei = web3.utils.toWei(
+                                            valueInEther.toString(),
+                                            "ether"
+                                          );
                                           contract.methods
-                                            .wl_mint(quantity_selected)
-                                            .send({ from: accountAddress });
+                                            .mint(quantity_selected)
+                                            .send({ from: accountAddress, value: valueInWei });
                                         });
                                       }); 
                                     }
